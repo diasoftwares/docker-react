@@ -6,5 +6,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+#For beanstalk mapping
+EXPOSE 80 
 #Copy from builder phase
 COPY --from=builder /app/build /usr/share/nginx/html
